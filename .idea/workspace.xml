@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a981949d-0061-4f8c-93bf-20334cb945c3" name="Changes" comment="test git" />
+    <list default="true" id="a981949d-0061-4f8c-93bf-20334cb945c3" name="Changes" comment="test git">
+      <change afterPath="$PROJECT_DIR$/js/transaction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/transaction_list.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/transaction_list.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/index.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +20,19 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="SOFT" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="245029ab-0d07-4f14-b3b2-228ee407fdb6" />
   </component>
   <component name="ProjectId" id="21u5QEbYGAE6sJUfRMaz2nDxZdh" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -71,6 +89,7 @@
       <workItem from="1640181252382" duration="683000" />
       <workItem from="1640181953298" duration="198000" />
       <workItem from="1640182161307" duration="70000" />
+      <workItem from="1640262138675" duration="3049000" />
     </task>
     <task id="LOCAL-00001" summary="еуік">
       <created>1640181739466</created>
@@ -86,7 +105,21 @@
       <option name="project" value="LOCAL" />
       <updated>1640182898885</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="test git">
+      <created>1640262159436</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1640262159436</updated>
+    </task>
+    <task id="LOCAL-00004" summary="test git">
+      <created>1640262301668</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1640262301668</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -97,7 +130,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

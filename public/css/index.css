@@ -56,3 +56,41 @@
 .table tbody tr:last-child td:last-child {
     border-radius: 0 0 20px 0;
 }
+/*message*/
+.answer_message_right {
+    opacity: 0.8;
+    position: fixed;
+    right: 20px;
+    top: -100%;
+    transition-duration: 0.5s;
+    color: white;
+    padding: 20px 30px;
+    border-radius: 10px 0 10px 10px;
+    z-index: 11;
+}
+.answer_message_right:before {
+    font-size: 10px;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    transform: translateY(-100%);
+    right: 0;
+    border-bottom: 10px solid green;
+    border-left: 10px solid transparent;
+}
+.answer_message_right.success {
+    background: green;
+}
+.answer_message_right.success:before {
+    border-bottom-color: green;
+}
+.answer_message_right.error {
+    background: red;
+}
+.answer_message_right.error:before {
+    border-bottom-color: red;
+}
+.answer_message_right.active {
+    top: 20px;
+}

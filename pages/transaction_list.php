@@ -34,8 +34,8 @@ $var = $adminController->getTransactionList($_GET['status']??2);
                 <td><?= $item['count_time'] ?></td>
                 <td><?= $item['count_children'] ?></td>
                 <td><?= $var['price_list'][$item['count_time']]*$item['count_children'] ?></td>
-                <td><form action="/post/confirm_transaction.php" method="post"><input type="hidden" name="status" value="0"><input type="hidden" name="id" value="<?= $item['id'] ?>"><button>Принять</button></form></td>
-                <td><form action="/post/confirm_transaction.php" method="post"><input type="hidden" name="status" value="3"><input type="hidden" name="id" value="<?= $item['id'] ?>"><button>Отказать</button></form></td>
+                <td><form onsubmit="success_transaction(this); return false" action="/post/confirm_transaction.php" method="post"><input type="hidden" name="status" value="0"><input type="hidden" name="id" value="<?= $item['id'] ?>"><button>Принять</button></form></td>
+                <td><form onsubmit="closed_transaction(this); return false" action="/post/confirm_transaction.php" method="post"><input type="hidden" name="status" value="3"><input type="hidden" name="id" value="<?= $item['id'] ?>"><button>Отказать</button></form></td>
             </tr>
         <tbody>
         <?php } ?>

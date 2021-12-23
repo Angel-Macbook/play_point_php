@@ -22,6 +22,7 @@
     <a href="/pages/child_list.php">Список детей</a>
     <a href="/pages/transaction_list.php">Список трансаций</a>
 </div>
+<div class="answer_message_right">Успешно сохранено</div>
 <?php
 
 ?>
