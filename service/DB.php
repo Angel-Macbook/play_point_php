@@ -7,9 +7,9 @@ class DBController{
             $connect_password = "";
             $connect_db_name = "playpoint";
         } else {
-            $connect_name = 'id17346577_play_point';
-            $connect_password = 'lwFLSlowSY$T3YAR';
-            $connect_db_name = "id17346577_playpoint";
+            $connect_name = 'id17346577_playpoint';
+            $connect_password = '$QSQBX}_[1D$Ug?$';
+            $connect_db_name = "id17346577_play_point";
         }
         return mysqli_connect($connect_localhost, $connect_name, $connect_password, $connect_db_name);
 

@@ -79,7 +79,7 @@ class UsersController
         if ($login_sql->num_rows <= 0) {
             return [
                 'code' => 1,
-                'text' => 'Такой логин не существует',
+                'text' => 'Login is not defined',
             ];
         } else {
             $users_query = $login_sql->fetch_array();
@@ -91,15 +91,32 @@ class UsersController
                 ];
                 return [
                     'code' => 0,
-                    'text' => 'Вы успешно авторизованы',
+                    'text' => 'Success authorization',
                 ];
             } else {
                 return [
                     'code' => 1,
-                    'text' => 'Вы ввели неверный пароль',
+                    'text' => 'password in not defined',
                 ];
             }
         }
+    }
+    public function logout(){
+        if (!isset($_SESSION['auth'])){
+            unset($_SESSION['auth']);
+            return [
+                'code' => 1,
+                'text' => 'You not authorization',
+            ];
+        }else{
+            unset($_SESSION['auth']);
+
+            return [
+                'code' => 0,
+                'text' => 'You logout in account',
+            ];
+        }
+
     }
 }
 

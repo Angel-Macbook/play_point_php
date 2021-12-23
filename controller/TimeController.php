@@ -11,6 +11,12 @@ class TimeController
     {
         $db = new DBController;
         $this->connect = $db->connect();
+        if (!isset($_SESSION['auth'])){
+            exit(json_encode([
+                'code' => 503,
+                'text' => 'You not authorization',
+            ]));
+        }
         $this->auth = $_SESSION['auth'];
     }
 
@@ -37,9 +43,7 @@ class TimeController
                 ];
         }
 //        echo (DateTime::createFromFormat('Y-m-d H:i:s', date('Y-m-d H:i:s')))->modify("+$time minute")->format('Y-m-d H:i:s');
-
-
-        $sql = "INSERT INTO `users_times` (`id`, `user_id`, `times_start`, `count_time`, `status`) VALUES (NULL, '$user_id', '$date_start', '$count_time', '2');";
+        $sql = "INSERT INTO `users_times` (`id`, `user_id`, `times_start`, `count_time`, `status`,`created_at`, `closed_at`) VALUES (NULL, '$user_id', NULL , '$count_time', '2', '$date_start', NULL);";
         $result = mysqli_query($this->connect, $sql);
         if ($result) {
             return [
@@ -52,5 +56,28 @@ class TimeController
                 'text' => 'Error other save',
             ];
         }
+    }
+
+    public function get_time()
+    {
+        $sql = "SELECT * FROM `users_times` WHERE `id` = '" . $this->auth['id'] . "'";
+        $sql_result = mysqli_query($this->connect, $sql);
+        if($sql_result->num_rows>0){
+            $data = mysqli_fetch_array($sql_result);
+            return [
+                'code' => 0,
+                'text' => 'Successful save',
+                'data' => [
+                    'time_start' => $data['times_start'],
+                    'count_time' => $data['count_time'],
+                ]
+            ];
+        }else{
+            return [
+                'code' => 1,
+                'text' => 'Error other save',
+            ];
+        }
+
     }
 }

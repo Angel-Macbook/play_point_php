@@ -1,6 +1,7 @@
 <?php
 $domain = $_SERVER['DOCUMENT_ROOT'];
 include($domain . '/app/header.php');
+
 ?>
 
 <form action="/post/select_time_url.php"

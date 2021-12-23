@@ -11,7 +11,15 @@ class UsersChildController
     {
         $db = new DBController;
         $this->connect = $db->connect();
+        if (!isset($_SESSION['auth'])){
+            exit(json_encode([
+                'code' => 503,
+                'text' => 'You not authorization',
+            ]));
+        }
+
         $this->auth = $_SESSION['auth'];
+//        session_destroy();
     }
     public function get_child_list(){
         $user_id = $this->auth['id'];
