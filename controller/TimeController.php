@@ -11,7 +11,7 @@ class TimeController
     {
         $db = new DBController;
         $this->connect = $db->connect();
-        if (!isset($_SESSION['auth'])){
+        if (!isset($_SESSION['auth'])) {
             exit(json_encode([
                 'code' => 503,
                 'text' => 'You not authorization',
@@ -60,24 +60,34 @@ class TimeController
 
     public function get_time()
     {
-        $sql = "SELECT * FROM `users_times` WHERE `id` = '" . $this->auth['id'] . "'";
+        $sql = "SELECT * FROM `users_times` WHERE `user_id` = '" . $this->auth['id'] . "' AND `status` = 0";
         $sql_result = mysqli_query($this->connect, $sql);
-        if($sql_result->num_rows>0){
+        if ($sql_result->num_rows > 0) {
             $data = mysqli_fetch_array($sql_result);
+            $test = date("Y-m-d H:i:s", strtotime($data['times_start']));
+
+            $now = new DateTime();
+            $date = DateTime::createFromFormat("Y-m-d H:i:s", $test);
+            $interval = $now->diff($date);
+
+            $hours = $interval->h;
+            $minutes = $interval->i;
+            $seconds = $interval->s;
+            $fool_time = $hours * 3600 + $minutes * 60 + $seconds;
             return [
                 'code' => 0,
                 'text' => 'Successful save',
                 'data' => [
                     'time_start' => $data['times_start'],
                     'count_time' => $data['count_time'],
+                    'fool_second' => $fool_time,
                 ]
             ];
-        }else{
+        } else {
             return [
                 'code' => 1,
                 'text' => 'Error other save',
             ];
         }
-
     }
 }

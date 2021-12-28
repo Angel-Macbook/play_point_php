@@ -13,8 +13,12 @@ class AdminController extends DefaultController
     public function confirmTransaction($request): array
     {
         $status = null;
+        $data_sql = [];
+        date_default_timezone_set('UTC');
+        $date_start = date('Y-m-d H:i:s');
         switch ($request['status']) {
             case 0:
+                $data_sql[] = ["times_start", $date_start];
                 $status = 0;
                 break;
             case 1:
@@ -29,11 +33,10 @@ class AdminController extends DefaultController
                     'text' => 'Status undefined',
                 ];
         }
-
+        $data_sql[] = ['status', $status];
         $update_price = $this->updateBD(
             'users_times',
-            ['status', $status],
-            [
+            $data_sql, [
                 ['id', $request['id']]
             ]
         );

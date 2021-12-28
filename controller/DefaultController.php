@@ -26,25 +26,28 @@ class DefaultController
         $sql = "SELECT * FROM `$from` $sql_where ORDER BY `id` ASC";
         return $this->resultCompressor($sql);
     }
+
     public function updateBD($from, $set, $where, $order = ""): array
     {
-        if (!$where){
+        if (!$where) {
             return [
                 'code' => 1,
-                'text'=> "Where is not defined",
+                'text' => "Where is not defined",
             ];
         }
-        if (!$set){
+        if (!$set) {
             return [
                 'code' => 1,
-                'text'=> "Set is not defined",
+                'text' => "Set is not defined",
             ];
         }
+        $set_sql = $this->setCompressor($set);
         $sql_where = $this->whereCompressor($where);
-        $sql = "UPDATE `$from` SET `$set[0]` = $set[1] $sql_where";
+
+        $sql = "UPDATE `$from` SET $set_sql $sql_where";
         return [
             'code' => 0,
-            'text'=> "Successful update",
+            'text' => "Successful update",
             'count_update' => mysqli_query($this->connect, $sql)
         ];
     }
@@ -55,14 +58,16 @@ class DefaultController
         $sql = "SELECT $select FROM $from LEFT JOIN $join_where ON $on";
         return $this->resultCompressor($sql);
     }
+
     public function normalSQLBD($sql_normal): array
     {
         return $this->resultCompressor($sql_normal);
     }
+
     private function resultCompressor($sql): array
     {
         $data = [];
-        if ($query = mysqli_query($this->connect, $sql)){
+        if ($query = mysqli_query($this->connect, $sql)) {
             foreach ($query as $item) {
                 $data[] = $item;
             }
@@ -70,6 +75,7 @@ class DefaultController
 
         return $data;
     }
+
     private function whereCompressor($where): string
     {
         $sql_where = '';
@@ -84,6 +90,25 @@ class DefaultController
             } else {
                 $sql_where .= "`$item[0]` $item[1] '$item[2]'";
             }
+        }
+        return $sql_where;
+    }
+
+    private function setCompressor($where): string
+    {
+        $sql_where = '';
+        foreach ($where as $key => $item) {
+            if ($key == 0) {
+                $sql_where .= " ";
+            } else {
+                $sql_where .= ", ";
+            }
+            if (count($item) == 2) {
+                $sql_where .= "`$item[0]` = '$item[1]'";
+            } else {
+                $sql_where .= "`$item[0]` $item[1] '$item[2]'";
+            }
+            $sql_where .= " ";
         }
         return $sql_where;
     }

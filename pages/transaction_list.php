@@ -3,7 +3,7 @@ $domain = $_SERVER['DOCUMENT_ROOT'];
 include($domain . '/app/header.php');
 include($domain . "/controller/AdminController.php");
 $adminController = new AdminController();
-$var = $adminController->getTransactionList($_GET['status']??2);
+$var = $adminController->getTransactionList($_GET['status'] ?? 2);
 ?>
 
 <div class="link_list">
@@ -28,15 +28,27 @@ $var = $adminController->getTransactionList($_GET['status']??2);
         </thead>
         <?php foreach ($var['data'] as $key => $item) { ?>
         <tbody>
-            <tr>
-                <td><?= $key + 1 ?></td>
-                <td><?= $item['first_name'] . " " . $item['last_name'] ?></td>
-                <td><?= $item['count_time'] ?></td>
-                <td><?= $item['count_children'] ?></td>
-                <td><?= $var['price_list'][$item['count_time']]*$item['count_children'] ?></td>
-                <td><form onsubmit="success_transaction(this); return false" action="/post/confirm_transaction.php" method="post"><input type="hidden" name="status" value="0"><input type="hidden" name="id" value="<?= $item['id'] ?>"><button>Принять</button></form></td>
-                <td><form onsubmit="closed_transaction(this); return false" action="/post/confirm_transaction.php" method="post"><input type="hidden" name="status" value="3"><input type="hidden" name="id" value="<?= $item['id'] ?>"><button>Отказать</button></form></td>
-            </tr>
+        <tr>
+            <td><?= $key + 1 ?></td>
+            <td><?= $item['first_name'] . " " . $item['last_name'] ?></td>
+            <td><?= $item['count_time'] ?></td>
+            <td><?= $item['count_children'] ?></td>
+            <td><?= $var['price_list'][$item['count_time']] * $item['count_children'] ?></td>
+            <td>
+                <form onsubmit="success_transaction(this); return false" action="/post/confirm_transaction.php"
+                      method="post"><input type="hidden" name="status" value="0">
+                    <input type="hidden" name="id" value="<?= $item['id'] ?>">
+                    <button>Принять</button>
+                </form>
+            </td>
+            <td>
+                <form onsubmit="closed_transaction(this); return false" action="/post/confirm_transaction.php"
+                      method="post"><input type="hidden" name="status" value="3">
+                    <input type="hidden" name="id" value="<?= $item['id'] ?>">
+                    <button>Отказать</button>
+                </form>
+            </td>
+        </tr>
         <tbody>
         <?php } ?>
     </table>
