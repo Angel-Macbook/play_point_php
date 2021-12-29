@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a981949d-0061-4f8c-93bf-20334cb945c3" name="Changes" comment="Message answer">
+    <list default="true" id="a981949d-0061-4f8c-93bf-20334cb945c3" name="Changes" comment="Get_fool_second">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/DefaultController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/TimeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/TimeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/transaction_list.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/transaction_list.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post/time_start_url.php" beforeDir="false" afterPath="$PROJECT_DIR$/post/time_start_url.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +88,9 @@
       <workItem from="1640262138675" duration="7137000" />
       <workItem from="1640454681343" duration="763000" />
       <workItem from="1640534771673" duration="3919000" />
-      <workItem from="1640696180632" duration="1328000" />
+      <workItem from="1640696180632" duration="1395000" />
+      <workItem from="1640701382855" duration="2467000" />
+      <workItem from="1640759289321" duration="168000" />
     </task>
     <task id="LOCAL-00001" summary="еуік">
       <created>1640181739466</created>
@@ -129,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640266871686</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Get_fool_second">
+      <created>1640701337984</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1640701337984</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,6 +172,7 @@
     <MESSAGE value="еуік" />
     <MESSAGE value="test git" />
     <MESSAGE value="Message answer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Message answer" />
+    <MESSAGE value="Get_fool_second" />
+    <option name="LAST_COMMIT_MESSAGE" value="Get_fool_second" />
   </component>
 </project>

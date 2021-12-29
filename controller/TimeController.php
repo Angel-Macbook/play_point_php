@@ -70,10 +70,11 @@ class TimeController
             $date = DateTime::createFromFormat("Y-m-d H:i:s", $test);
             $interval = $now->diff($date);
 
+            $day = $interval->d;
             $hours = $interval->h;
             $minutes = $interval->i;
             $seconds = $interval->s;
-            $fool_time = $hours * 3600 + $minutes * 60 + $seconds;
+            $fool_time = ($day*3600*24)+$hours * 3600 + $minutes * 60 + $seconds;
             return [
                 'code' => 0,
                 'text' => 'Successful save',
