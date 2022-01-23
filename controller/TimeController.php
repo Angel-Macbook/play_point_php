@@ -4,6 +4,7 @@ include $domain . "/service/DB.php";
 
 class TimeController
 {
+
     private $connect;
     private $auth;
 
@@ -57,34 +58,81 @@ class TimeController
             ];
         }
     }
+//    private function get_foll_second(){
+//        TimeSecond = TimeFoolSecond;
+//        TimeHours = Mathf.Floor(TimeSecond / 3600);
+//        TimeSecond -= TimeHours * 3600;
+//        TimeMinute = Mathf.Floor(TimeSecond / 60);
+//        TimeSecond -= TimeMinute * 60;
+//    }
+    function seconds($time)
+    {
+        $time = $time->format("Y-m-d H:i:s");
+        $time = strtotime($time);
+        if ($time != -1)
+            return $time - strtotime('00:00');
+        else
+            return false;
+    }
+    private function get_foll_second($data){
 
+//        print_r($data.date("m"));
+
+        $day = $date_start = date('d', strtotime($data));
+        $hours = $date_start = date('H', strtotime($data));
+        $minutes = $date_start = date('i', strtotime($data));
+        $seconds = $date_start = date('s', strtotime($data));
+        return (($day * 3600 * 24) + (($hours * 3600) - 0) + $minutes*60 + $seconds);
+//
+    }
     public function get_time()
     {
-        $sql = "SELECT * FROM `users_times` WHERE `user_id` = '" . $this->auth['id'] . "' AND `status` = 0";
+        $sql = "SELECT * FROM `users_times` WHERE `user_id` = '" . $this->auth['id'] . "' AND `status` = 0 ORDER BY `users_times`.`id` DESC";
         $sql_result = mysqli_query($this->connect, $sql);
         if ($sql_result->num_rows > 0) {
             $data = mysqli_fetch_array($sql_result);
             $test = date("Y-m-d H:i:s", strtotime($data['times_start']));
+            define('TIMEZONE', 'Europe/London');
+            date_default_timezone_set(TIMEZONE);
 
             $now = new DateTime();
             $date = DateTime::createFromFormat("Y-m-d H:i:s", $test);
-            $interval = $now->diff($date);
+
+//            $x = $this->seconds("2022-01-16 16:15:00");
+//            $y = $this->seconds("2022-01-16 16:00:00");
+            $x = $this->seconds($now);
+
+            $y = $this->seconds($date);
+
+            $z = $data['count_time']*60;
+
+            $ananas = $z - ($x - $y);
+//            print_r($ananas);
+            $interval = $date->diff($now);
+
+//            x = 16:15:00
+//            y = 16:00:00
+//            z = 00:30:00
+//            z - (x - y)  = 00:20:00
 
             $day = $interval->d;
             $hours = $interval->h;
             $minutes = $interval->i;
             $seconds = $interval->s;
-            $fool_time = ($day * 3600 * 24) + $hours * 3600 + $minutes * 60 + $seconds;
-            if ($date < $now) {
-                $fool_time *= -1;
+
+//            $fool_time = ($day * 3600 * 24) + (($hours * 3600) - 0) + $minutes+$data['count_time']*60 + $seconds ;
+
+            if ($date > $now) {
+                $ananas *= -1;
             }
             return [
                 'code' => 0,
                 'text' => 'Successful save',
                 'data' => [
+                    'id' => $data['id'],
                     'time_start' => $data['times_start'],
                     'count_time' => $data['count_time'],
-                    'fool_second' => $fool_time,
+                    'fool_second' => $ananas,
                 ]
             ];
         } else {

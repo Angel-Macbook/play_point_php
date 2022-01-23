@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a981949d-0061-4f8c-93bf-20334cb945c3" name="Changes" comment="Get_fool_second &#10;-- add day">
+    <list default="true" id="a981949d-0061-4f8c-93bf-20334cb945c3" name="Changes" comment="Get_fool_second &#10;-- fix overdue time">
+      <change afterPath="$PROJECT_DIR$/public/res/Home.ai" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/res/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/res/logo.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/TimeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/TimeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/transaction_list.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/transaction_list.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,9 +33,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="SOFT" />
   </component>
-  <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="245029ab-0d07-4f14-b3b2-228ee407fdb6" />
-  </component>
   <component name="ProjectId" id="21u5QEbYGAE6sJUfRMaz2nDxZdh" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -43,7 +46,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/post" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../0-laravel/it-schoollearn" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -90,7 +93,13 @@
       <workItem from="1640534771673" duration="3919000" />
       <workItem from="1640696180632" duration="1395000" />
       <workItem from="1640701382855" duration="2467000" />
-      <workItem from="1640759289321" duration="3601000" />
+      <workItem from="1640759289321" duration="5234000" />
+      <workItem from="1640891501029" duration="807000" />
+      <workItem from="1641452208866" duration="890000" />
+      <workItem from="1642008427327" duration="727000" />
+      <workItem from="1642243438163" duration="75000" />
+      <workItem from="1642345673158" duration="8278000" />
+      <workItem from="1642946365844" duration="1948000" />
     </task>
     <task id="LOCAL-00001" summary="еуік">
       <created>1640181739466</created>
@@ -141,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640759570871</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Get_fool_second &#10;-- fix overdue time">
+      <created>1640788853325</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1640788853325</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,6 +197,7 @@
     <MESSAGE value="Message answer" />
     <MESSAGE value="Get_fool_second" />
     <MESSAGE value="Get_fool_second &#10;-- add day" />
-    <option name="LAST_COMMIT_MESSAGE" value="Get_fool_second &#10;-- add day" />
+    <MESSAGE value="Get_fool_second &#10;-- fix overdue time" />
+    <option name="LAST_COMMIT_MESSAGE" value="Get_fool_second &#10;-- fix overdue time" />
   </component>
 </project>

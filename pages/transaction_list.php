@@ -20,6 +20,7 @@ $var = $adminController->getTransactionList($_GET['status'] ?? 2);
             <th>№</th>
             <th>Имя</th>
             <th>Время</th>
+            <th>Создан</th>
             <th>Количество детей</th>
             <th>Цена</th>
             <th>Подтвердить</th>
@@ -32,6 +33,7 @@ $var = $adminController->getTransactionList($_GET['status'] ?? 2);
             <td><?= $key + 1 ?></td>
             <td><?= $item['first_name'] . " " . $item['last_name'] ?></td>
             <td><?= $item['count_time'] ?></td>
+            <td><?= $item['created_at'] ?></td>
             <td><?= $item['count_children'] ?></td>
             <td><?= $var['price_list'][$item['count_time']] * $item['count_children'] ?></td>
             <td>
