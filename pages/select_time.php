@@ -20,7 +20,7 @@ include($domain . '/app/header.php');
       method="post"
 >
     <input type="hidden" name="select_time" value="Select_2">
-    <button type="submit">90 минут</button>
+    <button type="submit">безлимит</button>
 </form>
 <div class="message"></div>
 <?php

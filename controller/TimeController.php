@@ -35,7 +35,7 @@ class TimeController
                 $count_time = 60;
                 break;
             case "Select_2" :
-                $count_time = 90;
+                $count_time = 999;
                 break;
             default :
                 return [
@@ -74,7 +74,9 @@ class TimeController
         else
             return false;
     }
-    private function get_foll_second($data){
+
+    private function get_foll_second($data)
+    {
 
 //        print_r($data.date("m"));
 
@@ -82,9 +84,10 @@ class TimeController
         $hours = $date_start = date('H', strtotime($data));
         $minutes = $date_start = date('i', strtotime($data));
         $seconds = $date_start = date('s', strtotime($data));
-        return (($day * 3600 * 24) + (($hours * 3600) - 0) + $minutes*60 + $seconds);
+        return (($day * 3600 * 24) + (($hours * 3600) - 0) + $minutes * 60 + $seconds);
 //
     }
+
     public function get_time()
     {
         $sql = "SELECT * FROM `users_times` WHERE `user_id` = '" . $this->auth['id'] . "' AND `status` = 0 ORDER BY `users_times`.`id` DESC";
@@ -98,29 +101,26 @@ class TimeController
             $now = new DateTime();
             $date = DateTime::createFromFormat("Y-m-d H:i:s", $test);
 
-//            $x = $this->seconds("2022-01-16 16:15:00");
-//            $y = $this->seconds("2022-01-16 16:00:00");
+
             $x = $this->seconds($now);
-
             $y = $this->seconds($date);
+            $z = $data['count_time'] * 60;
 
-            $z = $data['count_time']*60;
 
-            $ananas = $z - ($x - $y);
-//            print_r($ananas);
+            if ($data['count_time'] !== "999") {
+                $ananas = $z - ($x - $y);
+            } else {
+                $ananas = 86400 - $x;
+            }
+
+
             $interval = $date->diff($now);
-
-//            x = 16:15:00
-//            y = 16:00:00
-//            z = 00:30:00
-//            z - (x - y)  = 00:20:00
 
             $day = $interval->d;
             $hours = $interval->h;
             $minutes = $interval->i;
             $seconds = $interval->s;
 
-//            $fool_time = ($day * 3600 * 24) + (($hours * 3600) - 0) + $minutes+$data['count_time']*60 + $seconds ;
 
             if ($date > $now) {
                 $ananas *= -1;

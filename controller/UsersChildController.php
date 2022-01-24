@@ -21,6 +21,11 @@ class UsersChildController
         $this->auth = $_SESSION['auth'];
 //        session_destroy();
     }
+    public function add_child($request){
+        $name = $request['name'];
+        $user_id = $this->auth['id'];
+        $sql_get = "INSERT INTO `users_child` (`id`, `parent_id`, `name`, `status`, `avatar`) VALUES (NULL, '$user_id', '$name', '0', NULL)";
+    }
     public function get_child_list(){
         $user_id = $this->auth['id'];
         $sql_get = "SELECT * FROM `users_child` WHERE `parent_id` = $user_id";
