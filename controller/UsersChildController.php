@@ -24,7 +24,13 @@ class UsersChildController
     public function add_child($request){
         $name = $request['name'];
         $user_id = $this->auth['id'];
-        $sql_get = "INSERT INTO `users_child` (`id`, `parent_id`, `name`, `status`, `avatar`) VALUES (NULL, '$user_id', '$name', '0', NULL)";
+        $sql_insert = "INSERT INTO `users_child` (`id`, `parent_id`, `name`, `status`, `avatar`) VALUES (NULL, '$user_id', '$name', '0', NULL)";
+        $query = mysqli_query($this->connect, $sql_insert);
+        return [
+            'code' => 0,
+            'text' => 'Saved successfully',
+            'data_users' => $query,
+        ];
     }
     public function get_child_list(){
         $user_id = $this->auth['id'];

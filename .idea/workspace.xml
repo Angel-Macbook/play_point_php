@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a981949d-0061-4f8c-93bf-20334cb945c3" name="Changes" comment="Get_fool_second &#10;-- fix overdue time">
-      <change afterPath="$PROJECT_DIR$/post/addChild_url.php" afterDir="false" />
+    <list default="true" id="a981949d-0061-4f8c-93bf-20334cb945c3" name="Changes" comment="Add name_child">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/TimeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/TimeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/UsersChildController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/UsersChildController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/select_time.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/select_time.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post/addChild_url.php" beforeDir="false" afterPath="$PROJECT_DIR$/post/addChild_url.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +95,9 @@
       <workItem from="1642243438163" duration="75000" />
       <workItem from="1642345673158" duration="8278000" />
       <workItem from="1642946365844" duration="4545000" />
-      <workItem from="1643048919972" duration="3418000" />
+      <workItem from="1643048919972" duration="4095000" />
+      <workItem from="1643135531447" duration="724000" />
+      <workItem from="1643561236494" duration="381000" />
     </task>
     <task id="LOCAL-00001" summary="еуік">
       <created>1640181739466</created>
@@ -162,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642950528406</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add name_child">
+      <created>1643056617014</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1643056617014</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,6 +210,7 @@
     <MESSAGE value="Get_fool_second" />
     <MESSAGE value="Get_fool_second &#10;-- add day" />
     <MESSAGE value="Get_fool_second &#10;-- fix overdue time" />
-    <option name="LAST_COMMIT_MESSAGE" value="Get_fool_second &#10;-- fix overdue time" />
+    <MESSAGE value="Add name_child" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add name_child" />
   </component>
 </project>
