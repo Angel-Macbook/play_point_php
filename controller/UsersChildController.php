@@ -11,17 +11,53 @@ class UsersChildController
     {
         $db = new DBController;
         $this->connect = $db->connect();
-        if (!isset($_SESSION['auth'])){
+        if (!isset($_SESSION['auth'])) {
             exit(json_encode([
                 'code' => 503,
                 'text' => 'You not authorization',
             ]));
         }
-
         $this->auth = $_SESSION['auth'];
-//        session_destroy();
     }
-    public function add_child($request){
+
+    public function card_event($request)
+    {
+        $card_id = $request['card_id'];
+        $user_id = $this->auth['id'];
+        $type = $request['type'];
+        if (!is_numeric($request['card_id'])) {
+            return [
+                'code' => 1,
+                'text' => "ErrorSave: card_id is not number --" . $request['card_id'],
+                'data_users' => "",
+            ];
+        }
+        switch ($request['type']) {
+            case 0:
+                $sql = "DELETE FROM `users_child` WHERE `users_child`.`id` = $card_id";
+                break;
+            case 1:
+                $sql = "DELETE FROM `users_child` WHERE `users_child`.`id` = $card_id";
+                break;
+            default :
+                return [
+                    'code' => 1,
+                    'text' => 'ErrorSave: type is not define',
+                    'data_users' => '',
+                ];
+        }
+        $query = mysqli_query($this->connect, $sql);
+        return [
+            'code' => 0,
+            'text' => 'Saved successfully',
+            'data_users' => $request['card_id'],
+        ];
+
+
+    }
+
+    public function add_child($request)
+    {
         $name = $request['name'];
         $user_id = $this->auth['id'];
         $sql_insert = "INSERT INTO `users_child` (`id`, `parent_id`, `name`, `status`, `avatar`) VALUES (NULL, '$user_id', '$name', '0', NULL)";
@@ -32,15 +68,16 @@ class UsersChildController
             'data_users' => $query,
         ];
     }
-    public function get_child_list(){
+
+    public function get_child_list()
+    {
         $user_id = $this->auth['id'];
         $sql_get = "SELECT * FROM `users_child` WHERE `parent_id` = $user_id";
         $query = mysqli_query($this->connect, $sql_get);
         $dta_users = [];
-        foreach ($query as $item){
+        foreach ($query as $item) {
             $dta_users[] = $item;
         }
-
         return [
             'code' => 0,
             'text' => 'Saved successfully',
@@ -59,6 +96,7 @@ class UsersChildController
             'text' => 'Saved successfully',
         ];
     }
+
     public function add_groups($request)
     {
         $code = 'FF231523';

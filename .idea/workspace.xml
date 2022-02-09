@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a981949d-0061-4f8c-93bf-20334cb945c3" name="Changes" comment="Add name_child">
+      <change afterPath="$PROJECT_DIR$/pages/card_event.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/card_event_post.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/UsersChildController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/UsersChildController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/post/addChild_url.php" beforeDir="false" afterPath="$PROJECT_DIR$/post/addChild_url.php" afterDir="false" />
@@ -97,7 +99,10 @@
       <workItem from="1642946365844" duration="4545000" />
       <workItem from="1643048919972" duration="4095000" />
       <workItem from="1643135531447" duration="724000" />
-      <workItem from="1643561236494" duration="381000" />
+      <workItem from="1643561236494" duration="726000" />
+      <workItem from="1643648703481" duration="1381000" />
+      <workItem from="1644163093086" duration="3051000" />
+      <workItem from="1644313513255" duration="11251000" />
     </task>
     <task id="LOCAL-00001" summary="еуік">
       <created>1640181739466</created>
@@ -169,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643056617014</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Add name_child">
+      <created>1643561628328</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1643561628328</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
